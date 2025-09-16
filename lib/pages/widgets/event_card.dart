@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:manse_app/pages/detail_page.dart';
-import 'package:manse_app/pages/widgets/animation.dart';
 
 class EventCard extends StatelessWidget {
   final String imagePath;

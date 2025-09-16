@@ -18,7 +18,7 @@ class CustomDrawer extends StatelessWidget {
               DrawerSection(
                 title: 'Our Journey',
                 onTap: () {
-                  Get.to(() => TimelineScreen(), transition: Transition.fadeIn);
+                  Get.to(() => JourneyScreen(), transition: Transition.fadeIn);
                 },
               ),
               DrawerSection(title: ''),

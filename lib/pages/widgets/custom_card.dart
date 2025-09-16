@@ -3,7 +3,16 @@ import 'package:manse_app/constants/assets.dart';
 import 'package:manse_app/pages/widgets/animation.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key});
+  final String name;
+  final String role;
+  final String imageUrl;
+
+  const CustomCard({
+    super.key,
+    required this.name,
+    required this.role,
+    required this.imageUrl,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +60,7 @@ class CustomCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   image: DecorationImage(
-                    image: AssetImage(Assets.assetsImagesRaj),
+                    image: NetworkImage(imageUrl),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -65,7 +74,7 @@ class CustomCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "RAJ THACKERAY",
+                    name,
                     style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                       fontSize: fontSizeTitle,
                     ),
@@ -74,7 +83,7 @@ class CustomCard extends StatelessWidget {
                   ),
                   SizedBox(height: isSmallScreen ? 4.0 : 8.0),
                   Text(
-                    "This is a description or content inside the card. You can customize it as needed.",
+                    role,
                     style: TextStyle(
                       fontSize: fontSizeDescription,
                       color: Colors.black87,
