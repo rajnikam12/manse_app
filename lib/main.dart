@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:manse_app/constants/assets.dart';
 import 'package:manse_app/navigation_menu.dart';
 import 'package:manse_app/services/theme.dart';
 import 'package:manse_app/splash_screen.dart';
+import 'package:manse_app/services/supabase_service.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+  await SupabaseService.initialize();
   runApp(const MyApp());
 }
 
